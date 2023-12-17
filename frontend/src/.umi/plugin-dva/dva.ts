@@ -3,9 +3,9 @@ import { Component } from 'react';
 import { ApplyPluginsType } from 'umi';
 import dva from 'dva';
 // @ts-ignore
-import createLoading from '/Users/weifanwu/Desktop/UWise/review/node_modules/dva-loading/dist/index.esm.js';
+import createLoading from '/Users/weifanwu/Desktop/UWise-Course-Review/frontend/node_modules/dva-loading/dist/index.esm.js';
 import { plugin, history } from '../core/umiExports';
-import ModelCourseInfo0 from '/Users/weifanwu/Desktop/UWise/review/src/models/courseInfo.tsx';
+import ModelCourseInfo0 from '/Users/weifanwu/Desktop/UWise-Course-Review/frontend/src/models/courseInfo.tsx';
 
 let app:any = null;
 

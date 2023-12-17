@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType } from '/Users/weifanwu/Desktop/UWise/review/node_modules/umi/node_modules/@umijs/runtime';
+import { ApplyPluginsType } from '/Users/weifanwu/Desktop/UWise-Course-Review/frontend/node_modules/umi/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 

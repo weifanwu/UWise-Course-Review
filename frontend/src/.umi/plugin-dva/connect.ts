@@ -6,7 +6,7 @@ import { EffectsCommandMap, SubscriptionAPI } from 'dva';
 import { match } from 'react-router-dom';
 import { Location, LocationState, History } from 'history';
 
-export * from '/Users/weifanwu/Desktop/UWise/review/src/models/courseInfo';
+export * from '/Users/weifanwu/Desktop/UWise-Course-Review/frontend/src/models/courseInfo';
 
 export interface Action<T = any> {
   type: T

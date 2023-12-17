@@ -77,8 +77,9 @@ const RatingCard = (props: any) => {
       (async function callFetchHandler() {
         try {
                 console.log(courseCode);
-                let response = await fetch("http://localhost:4567/getReview?courseCode=" + courseCode);
-                console.log(response);
+                let response = await fetch("https://uwise-back-end.herokuapp.com/getReview?courseCode=" + courseCode, {
+                  mode: 'no-cors'
+                });
                 let reviews = await response.json();
                 console.log(reviews);
                 handleRenderContent(reviews);
@@ -122,10 +123,11 @@ const RatingCard = (props: any) => {
   const handleOk = async () => {
     try {
       const values = await form.validateFields();
-      setLoading(true); 
+      setLoading(true);
       const review = { "instructor" : values.instructor, "quarter" : values.quarter, "course" : courseCode, "comment" : values.comment, "reviewed" : false};
-      const response = await fetch("http://localhost:4567/addComment", {
+      const response = await fetch("https://uwise-back-end.herokuapp.com/addComment", {
         method: "POST",
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(review),
       });
@@ -186,6 +188,9 @@ const RatingCard = (props: any) => {
               </Form.Item>
               <Form.Item name="comment" rules={[{ required: true }]}>
                 <Input placeholder="Comment..." />
+              </Form.Item>
+              <Form.Item name="name" rules={[{ required: true }]}>
+                <Input placeholder="填写人姓名..." />
               </Form.Item>
             </Form>
           </Modal>

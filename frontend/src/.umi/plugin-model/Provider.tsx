@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import initialState from '/Users/weifanwu/Desktop/UWise/review/src/.umi/plugin-initial-state/models/initialState';
+import initialState from '/Users/weifanwu/Desktop/UWise-Course-Review/frontend/src/.umi/plugin-initial-state/models/initialState';
 
 // @ts-ignore
 import Dispatcher from './helpers/dispatcher';

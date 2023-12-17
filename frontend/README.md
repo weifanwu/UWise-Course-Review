@@ -5,7 +5,7 @@
 Install dependencies,
 
 ```bash
-$ yarn install
+$ yarn
 ```
 
 Start the dev server,

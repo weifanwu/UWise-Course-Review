@@ -180,16 +180,16 @@ public class SparkServer {
 			@Override
 			public Object handle(Request request, Response response) throws Exception {
 				try {
-					System.out.println("enter the add comment");
 					Gson gson = new Gson();
 					String requestBody = request.body();
 					JsonObject json = gson.fromJson(requestBody, JsonObject.class);
 					String instructor = json.get("instructor").toString();
 					String quarter = json.get("quarter").toString();
 					String course = json.get("course").toString();
+					String name = json.get("name").toString();
 					String comment = json.get("comment").toString();
 					boolean reviewed = json.get("reviewed").getAsBoolean();
-					String review = "{\"instructor\" : " + instructor + ", \"quarter\" : " + quarter + ", \"course\" : " + course + ", \"comment\" : " + comment + ", \"reviewed\" : " + reviewed + "}";
+					String review = "{\"instructor\" : " + instructor + ", \"name\" : " + name + ", \"quarter\" : " + quarter + ", \"course\" : " + course + ", \"comment\" : " + comment + ", \"reviewed\" : " + reviewed + "}";
 					Document doc = Document.parse(review);
 					collection.insertOne(doc);
 					return "comment uploaded";

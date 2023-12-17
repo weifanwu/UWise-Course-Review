@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { createHashHistory, History } from '/Users/weifanwu/Desktop/UWise/review/node_modules/umi/node_modules/@umijs/runtime';
+import { createHashHistory, History } from '/Users/weifanwu/Desktop/UWise-Course-Review/frontend/node_modules/umi/node_modules/@umijs/runtime';
 
 let options = {
   "basename": "/"
