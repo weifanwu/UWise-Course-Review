@@ -172,7 +172,7 @@ public class SparkServer {
 		get("/test", new Route() {
 			@Override
 			public String handle(Request request, Response response) throws Exception {
-				return "testing successful!";
+				return "testing successful renewed!";
 			}
 		});
 
