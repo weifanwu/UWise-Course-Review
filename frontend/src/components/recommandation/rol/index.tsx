@@ -36,7 +36,7 @@ function Rol(props: any) {
             <div className={styles.fillContent}>{payload['course_code']}</div>
           </div>
           <p className={styles.textContent}>{payload['course_code']}</p>
-      <p className={styles.breifInfo}>{breifInfo}</p>
+          <p className={styles.breifInfo}>{breifInfo}</p>
         </div>
       );
     });

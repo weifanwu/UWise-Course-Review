@@ -78,7 +78,6 @@ const RatingCard = (props: any) => {
         try {
                 console.log(courseCode);
                 let response = await fetch("https://uwise-back-end.herokuapp.com/getReview?courseCode=" + courseCode, {
-                  mode: 'no-cors'
                 });
                 let reviews = await response.json();
                 console.log(reviews);
@@ -124,10 +123,9 @@ const RatingCard = (props: any) => {
     try {
       const values = await form.validateFields();
       setLoading(true);
-      const review = { "instructor" : values.instructor, "quarter" : values.quarter, "course" : courseCode, "comment" : values.comment, "reviewed" : false};
+      const review = { "instructor" : values.instructor, "name" : values.name, "quarter" : values.quarter, "course" : courseCode, "comment" : values.comment, "reviewed" : false};
       const response = await fetch("https://uwise-back-end.herokuapp.com/addComment", {
         method: "POST",
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(review),
       });
@@ -161,7 +159,7 @@ const RatingCard = (props: any) => {
         </div>
       </div>
       <div className={styles.container}>
-        <p style={{alignSelf: 'flex-end', fontSize: 'x-small', opacity: '0.4'}}>Data collected from UW for 2016-2021</p>
+        <p style={{alignSelf: 'flex-end', fontSize: 'x-small', opacity: '0.4'}}>Data collected from UW</p>
         <div>
           <div className={styles.title}>
             <div className={styles.discussion}>课程评价</div>
@@ -188,9 +186,6 @@ const RatingCard = (props: any) => {
               </Form.Item>
               <Form.Item name="comment" rules={[{ required: true }]}>
                 <Input placeholder="Comment..." />
-              </Form.Item>
-              <Form.Item name="name" rules={[{ required: true }]}>
-                <Input placeholder="填写人姓名..." />
               </Form.Item>
             </Form>
           </Modal>
