@@ -95,7 +95,6 @@ function headArea(props: any) {
               style={{ paddingLeft: '10px', borderRadius: '14px' }}
             >
               <Menu.Item key="detail">Course Overview</Menu.Item>
-              <Menu.Item key="QA">Discussion</Menu.Item>
             </Menu>
           </div>
         </div>
