@@ -154,7 +154,7 @@ public class SparkServer {
 			}
 		});
 
-
+		
 		get("/newStudent/major", new Route() {
 			@Override
 			public List<String> handle(Request request, Response response) throws Exception {
@@ -186,10 +186,9 @@ public class SparkServer {
 					String instructor = json.get("instructor").toString();
 					String quarter = json.get("quarter").toString();
 					String course = json.get("course").toString();
-					String name = json.get("name").toString();
 					String comment = json.get("comment").toString();
 					boolean reviewed = json.get("reviewed").getAsBoolean();
-					String review = "{\"instructor\" : " + instructor + ", \"name\" : " + name + ", \"quarter\" : " + quarter + ", \"course\" : " + course + ", \"comment\" : " + comment + ", \"reviewed\" : " + reviewed + "}";
+					String review = "{\"instructor\" : " + instructor + ", \"quarter\" : " + quarter + ", \"course\" : " + course + ", \"comment\" : " + comment + ", \"reviewed\" : " + reviewed + "}";
 					Document doc = Document.parse(review);
 					collection.insertOne(doc);
 					return "comment uploaded";
@@ -242,7 +241,7 @@ public class SparkServer {
 	}
 
 	private static void init() {
-		String port = System.getenv("PORT");
+		String port = System.getenv("PORT");  
 		if (port == null || port.isEmpty()) {
 			port = "4567";
 		}

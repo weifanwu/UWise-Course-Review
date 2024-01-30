@@ -123,7 +123,7 @@ const RatingCard = (props: any) => {
     try {
       const values = await form.validateFields();
       setLoading(true);
-      const review = { "instructor" : values.instructor, "name" : values.name, "quarter" : values.quarter, "course" : courseCode, "comment" : values.comment, "reviewed" : false};
+      const review = { "instructor" : values.instructor, "quarter" : values.quarter, "course" : courseCode, "comment" : values.comment, "reviewed" : false};
       const response = await fetch("https://uwise-back-end.herokuapp.com/addComment", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
